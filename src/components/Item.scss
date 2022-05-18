@@ -1,0 +1,29 @@
+.item{
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    button{
+        font-size: 1vw;
+        width: 1.5vw;
+    }
+}
+
+.item-name{
+    width: 40%;
+    text-align: left;
+}
+
+.item-amount{
+    width: 15%;
+}
+
+.item-price{
+    width: 15%;
+}
+.btns{
+    width: 10%;
+}
+
+.del-btn{
+    width: 10%;
+}

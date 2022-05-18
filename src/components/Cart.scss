@@ -1,0 +1,55 @@
+.cart{
+    width: 60vw;
+    background-color: rgb(228, 228, 228);
+    margin: 2vw;
+    font-size: 1vw;
+    .line-wrapper:nth-child(even){
+        background-color: rgb(248, 248, 248);
+    }
+}
+
+.line-wrapper,.cart-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 1vw 1vw;
+    margin: 0;
+}
+
+.cart-header, .total{
+    background-color: rgb(192 206 231);
+    font-weight: 600;
+    padding: 1vw 1vw;
+}
+
+.total{
+    text-align: left;
+}
+
+.modal{
+    position: absolute;
+    left: 64vw;
+    top: 10vh;
+    width: 20vw;
+    height: 18vh;
+    background-color: rgb(248, 248, 248);
+    font-size: 1vw;
+    border: solid 1px rgb(228, 228, 228);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    transition: ease-in-out 0.5s;
+    >div{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    button{
+        font-size: 1vw;
+    }
+}
+
+.invis{
+    transition: ease-in-out 1s;
+    position: absolute;
+    left: 64vw;
+    top: -19vh;
+}
