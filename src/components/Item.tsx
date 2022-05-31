@@ -1,13 +1,11 @@
-import { useState } from 'react';
+import { Dispatch } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { CartAction } from '../actions/cart.actions';
 import './Item.scss';
 
 export type ItemProps = {
     data: ItemPropsData;
     rowNum: number;
-    onIncrease: (id: number) => void;
-    onDecrease: (id: number) => void;
-    onRemove: (id: number) => void;
 }
 
 export type ItemPropsData = {
@@ -18,6 +16,18 @@ export type ItemPropsData = {
 }
 
 export function Item(props: ItemProps) {
+    const dispatch = useDispatch();
+
+    const decrease = (id: number, dispatch: Dispatch<CartAction>) => {
+        dispatch(decrease(id));
+    }
+    const increase = (id: number) => {
+        dispatch({type: "PLUS_ITEM", payload: id})
+    }
+
+    const remove = (id: number) => {
+        dispatch({type: "REMOVE_ITEM", payload: id});
+    }
     
     return(
         <span className="line-wrapper">
@@ -33,10 +43,10 @@ export function Item(props: ItemProps) {
                     {props.data.price}
                 </div>
                 <div className="btns">
-                    <button onClick={()=>props.onDecrease(props.data.id)}>-</button> <button onClick={()=>props.onIncrease(props.data.id)}>+</button>
+                    <button onClick={()=>decrease(props.data.id)}>-</button> <button onClick={()=>increase(props.data.id)}>+</button>
                 </div>
                 <div className="del-btn">
-                    <button onClick={()=>props.onRemove(props.data.id)}>x</button>
+                    <button onClick={()=>remove(props.data.id)}>x</button>
                 </div>
             </div>
         </span> 

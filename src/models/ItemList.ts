@@ -1,11 +1,11 @@
-export type Items = {
+export type ItemData = {
     id: number;
     name: string;
     amount: number;
     price: number;
 }
 
-export const items = [{
+export const items: ItemData[] = [{
     id: 1,
     name: 'Блокнот',
     amount: 0,
